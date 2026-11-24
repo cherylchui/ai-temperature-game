@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temperature Slider Roulette</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>🌡️ Temperature Slider Roulette</h1>
+      <p class="subtitle">Slide the AI heat level to get the right reply for each task!</p>
+    </header>
+
+    <div class="status-bar">
+      <span>Round: <strong id="round-text">1 / 4</strong></span>
+      <span>Score: <strong id="score-text">0</strong></span>
+    </div>
+
+    <section id="game-card" class="card">
+      <span id="badge-text" class="badge">Task 1</span>
+      <h2 id="task-title" class="task-title"></h2>
+      <p id="task-goal" class="task-goal"></p>
+
+      <div class="slider-box">
+        <div class="slider-top">
+          <label for="temp-slider">AI Temperature</label>
+          <strong id="temp-value" class="temp-value">1.0</strong>
+        </div>
+        <input
+          id="temp-slider"
+          type="range"
+          min="0"
+          max="2"
+          step="0.1"
+          value="1.0"
+        />
+        <div class="slider-labels">
+          <span>0.0 (Stiff &amp; Plain)</span>
+          <span>1.0 (Balanced)</span>
+          <span>2.0 (Wild &amp; Messy)</span>
+        </div>
+      </div>
+
+      <button id="btn-test" class="btn btn-primary">🔥 Test This Temperature</button>
+
+      <div id="result-box" class="result-box hidden">
+        <p id="result-label" class="result-label"></p>
+        <p id="ai-reply" class="ai-reply"></p>
+        <p id="result-tip" class="result-tip"></p>
+        <div class="btn-row">
+          <button id="btn-try-again" class="btn btn-secondary">Try Another Spot</button>
+          <button id="btn-next" class="btn btn-primary">Next Round →</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="end-card" class="card hidden">
+      <span class="badge">Game Over</span>
+      <h2 class="task-title">🎉 Nice Work!</h2>
+      <p id="final-score" class="final-score"></p>
+      <p id="final-note" class="result-tip"></p>
+      <button id="btn-restart" class="btn btn-primary">↻ Play Again</button>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
